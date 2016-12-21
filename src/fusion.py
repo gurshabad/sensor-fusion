@@ -30,7 +30,8 @@ def lidar_d(msg):
 
 	#calculate best estimate
 	new_mean = (lidar_distribution[0]*(gps_distribution[1]**2) + gps_distribution[0]*(lidar_distribution[1]**2))/(lidar_distribution[1]**2 + gps_distribution[1]**2)
-	rospy.loginfo(new_mean)
+	rospy.loginfo("GPS: %f, LIDAR: %f, EST: %f", gps_distribution[0], lidar_distribution[0], new_mean)
+	#rospy.loginfo(new_mean)
 
 def gps_d(msg):
 	global last_gps_reading, last_lidar_reading
@@ -46,6 +47,8 @@ def gps_d(msg):
 	#update distribution
 	gps_distribution[0] = gps_sums[1]/float(gps_sums[0])
 	gps_distribution[1] = math.sqrt((gps_sums[0] * gps_sums[2] - gps_sums[1] * gps_sums[1])/float(gps_sums[0] * (gps_sums[0] - 1)))
+
+	#rospy.loginfo("%f, %f", gps_distribution[0], gps_distribution[1])
     
 def listener():
     rospy.init_node('fusion_node', anonymous=True)

@@ -30,7 +30,7 @@ def gpscb1(data):
     global gps2, pub
     gps2 = data
     curr_distance = coordinate_distance(gps1.latitude, gps1.longitude, gps2.latitude, gps2.longitude)
-    rospy.loginfo("%f", curr_distance)
+    #rospy.loginfo("%f", curr_distance)
     pub.publish(curr_distance)
     
 def listener():
