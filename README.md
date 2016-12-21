@@ -8,4 +8,6 @@ This repository is a catkin ROS package.
 rosbag play 2016-12-14-17-25-07.bag /mavros/global_position/global:=gps1
 
 rosbag play 2016-12-14-17-28-30.bag /mavros/global_position/global:=gps2
+
+Use: http://homepage.divms.uiowa.edu/~mbognar/applets/normal.html
 -->
