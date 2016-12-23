@@ -1,13 +1,4 @@
 # Sensor fusion
-A generic module for fusing the same information obtained from two sensors, with an example of fusing GPS and LIDAR readings.
+A generic module for fusing the same information obtained from two sources. We assume that the information about the same variable from both sources forms a Gaussian.
 
-This repository is a catkin ROS package.
-
-<!---
-# temp
-rosbag play 2016-12-14-17-25-07.bag /mavros/global_position/global:=gps1
-
-rosbag play 2016-12-14-17-28-30.bag /mavros/global_position/global:=gps2
-
-Use: http://homepage.divms.uiowa.edu/~mbognar/applets/normal.html
--->
+This repository is a catkin ROS package. It consists of an example of fusing GPS (/gps1 and /gps2) and LIDAR (/velodyne_point) information.
